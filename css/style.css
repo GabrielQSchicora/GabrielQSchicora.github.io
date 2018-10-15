@@ -1,0 +1,33 @@
+/*
+==========
+==HEADER==
+==========
+*/
+header{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.33);
+}
+
+	header nav.menu ul{
+		text-align: center;
+	}
+
+		header nav.menu ul li{
+			display: inline-block;
+			cursor: pointer;
+			color: rgba(255, 255, 255, 0.55	);
+			font-weight: normal;
+			font-size: 14px;
+			padding: 2px 0;
+			margin: 13px 40px;
+			border-bottom: 2px solid transparent;
+		}
+
+		header nav.menu ul li.active,
+		header nav.menu ul li:hover{
+			color: #FFF;
+			border-bottom-color: #157546;
+		}

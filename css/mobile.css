@@ -1,0 +1,40 @@
+/*||||||||||||||||||||||||||||||||||||||*/
+/*||||||||   RESOLUÇÃO MOBILE   ||||||||*/
+/*||||||||||||||||||||||||||||||||||||||*/
+@media (min-width: 0px) and (max-width: 959px){
+
+	/*
+	=================
+	==GENERAL TOOLS==
+	=================
+	*/
+	.container{
+		width: 100%; 
+		display: block;
+	}
+
+	.desktop{
+		display: none !important;
+	}
+
+	.mobile{
+		display: block !important;
+	}
+
+	.messageBox img{
+		display: none;
+	}
+
+	/*
+	==========
+	==HEADER==
+	==========
+	*/
+
+	/*
+	==========
+	==FOOTER==
+	==========
+	*/
+
+}
