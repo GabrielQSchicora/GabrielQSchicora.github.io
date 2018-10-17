@@ -7,7 +7,7 @@
  */
 
 html {
-  font-family: sans-serif; /* 1 */
+  font-family: 'Zekton'; /* 1 */
   -ms-text-size-adjust: 100%; /* 2 */
   -webkit-text-size-adjust: 100%; /* 2 */
 }
@@ -230,7 +230,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: monospace, monospace;
+  font-family: 'Zekton';
   font-size: 1em;
 }
 
@@ -436,7 +436,7 @@ th {
 */
 * {
     color: #000;
-    font-family: Arial;
+    font-family: 'Zekton';
     font-size: 100%;    
     line-height: 25px;
     font-weight: bold;
@@ -449,7 +449,7 @@ th {
 
 p {
     border: 0; 
-    font-family: Arial;
+    font-family: 'Zekton';
     font-size: 16px;
     color:#000; 
     margin: 0;
@@ -507,7 +507,7 @@ input, button, textarea {
 }
 
 h1, h2, h3, h4, h5, h6{
-    font-family: Arial;
+    font-family: 'Zekton';
     color: #000;
     margin: 0;
     padding: 0;
@@ -519,7 +519,7 @@ div, header, footer, figure, ul, li, a, p{
 }
 
 strong{
-    font-family: Arial; 
+    font-family: '  ';
     font-weight: bold;
 }
 

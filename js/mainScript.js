@@ -101,30 +101,6 @@ $(document).ready(function(){
 
   /*
    *
-   * Show and hide menu in mobile on click in control buttons
-   *
-   */
-  $('.menu-mob img').click(function(){
-
-    //Check if is mobile
-    if(screenWidth < mobileResolution){
-
-      if($('.menu').is(':hidden')){     
-        $('.menu').slideDown();     
-        $('.open-menu').hide();
-        $('.close-menu').show();
-      }else{
-        $('.menu').slideUp();     
-        $('.open-menu').show();
-        $('.close-menu').hide();
-      }//End toogle menu
-
-    }//End is mobile
-
-  });//End function to show and hide menu on mobile
-
-  /*
-   *
    * Create a mask for file inputs
    *
    */
@@ -151,6 +127,19 @@ $(document).ready(function(){
       $(target).val($(this).val());
   
     });//End input file change
+
+    /*
+    *
+    * Open and close menu
+    *
+    */
+    $('header div.menuComand').click(function(){
+      if($(this).parent().hasClass('openned')){
+        $(this).parent().removeClass('openned');
+      }else{
+        $(this).parent().addClass('openned');
+      }
+    });
 
 });//End Document Ready
 
@@ -321,13 +310,13 @@ function openFancybox(href,link,target){
  * Facebook Script
  *
  */
-(function(d, s, id) {
+/*(function(d, s, id) {
 var js, fjs = d.getElementsByTagName(s)[0];
 if (d.getElementById(id)) return;
 js = d.createElement(s); js.id = id;
 js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.9";
 fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
+}(document, 'script', 'facebook-jssdk'));*/
 
 /*
  *===============================================================
