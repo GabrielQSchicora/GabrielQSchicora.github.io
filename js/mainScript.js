@@ -128,18 +128,25 @@ $(document).ready(function(){
   
     });//End input file change
 
-    /*
-    *
-    * Open and close menu
-    *
-    */
-    $('header div.menuComand').click(function(){
-      if($(this).parent().hasClass('openned')){
-        $(this).parent().removeClass('openned');
-      }else{
-        $(this).parent().addClass('openned');
-      }
-    });
+  /*
+  *
+  * Open and close menu
+  *
+  */
+  $('header div.menuComand').click(function(){
+    if($(this).parent().hasClass('openned')){
+      $(this).parent().removeClass('openned');
+    }else{
+      $(this).parent().addClass('openned');
+    }
+  });
+
+  /*
+  *
+  * Set height to first div
+  *
+  */
+  $('div.home').css('height', screenHeight);
 
 });//End Document Ready
 
@@ -183,6 +190,13 @@ $(window).resize(function(){
   if(screenWidth > mobileResolution){
     $('.menu').show();
   }
+
+  /*
+  *
+  * Set height to first div
+  *
+  */
+  $('div.home').css('height', screenHeight);
 
 });//End Window Resize
 

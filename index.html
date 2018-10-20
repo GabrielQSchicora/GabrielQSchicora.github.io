@@ -6,8 +6,8 @@
 	<meta charset="utf-8">
 	<meta name="author" content="Gabriel Queiroz Schicora" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<meta name="keywords" content="" />
-	<meta name="description" content=""/>
+	<meta name="keywords" content="Desenvolvimento, Web, Desenvolvimento de sites, Desenvolvimento de sistemas, Programador, TI, Informática, PHP, JQuery, Javascript, HTML, CSS"/>
+	<meta name="description" content="Gabriel Queiroz Schicora - Desenvolvedor Front-End e Back-End em Curitiba."/>
 
 	<!--CSS-->
 	<link rel="stylesheet" type="text/css" href="css/fonts.css">
@@ -19,15 +19,6 @@
 	<!--Google-->
 	<meta name="robots" content="index, follow" />
 	<meta name="googlebot" content="index, follow" />
-
-	<!--Facebook-->
-	<meta property="og:type" content="website">
-	<meta property="og:locale" content="pt_BR">
-	<meta property="og:site_name" content="<?php echo SITE;?>">
-	<meta property="og:url" content="http://<?php echo $_SERVER['SERVER_NAME']; echo $_SERVER['REQUEST_URI']?>"> 	
-	<meta property="og:title" content="<?php echo SITE;?>">
-	<meta property="og:description" content="<?php echo SITE;?>">
-	<meta property="og:image" content="http://<?php echo $_SERVER['SERVER_NAME']; echo $_SERVER['REQUEST_URI']?>img/logo.png">	
 
   	<!--Favicon-->
 	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
@@ -48,17 +39,69 @@
 		<div class="menuComand"></div>
 		<nav class="menu">
 			<ul>
-				<li data-targte="scrollTop" id="home-menu-item" class="active"><img src="img/menu-icons/home.png" alt="Icone de casa"><span>Home</span></li>
+				<li data-targte="#home" id="home-menu-item" class="active"><img src="img/menu-icons/home.png" alt="Icone de casa"><span>Home</span></li>
 				<li data-targte="#about-me" id="about-me-menu-item"><img src="img/menu-icons/about-me.png" alt="Icone de pessoa"><span>Quem sou eu</span></li>
 				<li data-targte="#formation" id="formation-menu-item"><img src="img/menu-icons/formation.png" alt="Icone de diploma"><span>Formação</span></li>
 				<li data-targte="" id="experience-menu-item"><img src="img/menu-icons/experience.png" alt="Icone de ascensão"><span>Experiência</span></li>
 				<li data-targte="" id="qualifications-menu-item"><img src="img/menu-icons/qualifications.png" alt="Icone de checkList"><span>Qualificações</span></li>
+				<li data-targte="" id="projects-menu-item"><img src="img/menu-icons/projects.png" alt="Icone de Projeto"><span>Projetos</span></li>
 				<li data-targte="" id="talk-to-me-menu-item"><img src="img/menu-icons/talk-to-me.png" alt="Icone de balões de conversa"><span>Fale comigo</span></li>
 			</ul>
+			<div class="changeTheme">
+				<label for="darkTheme">Dark Theme</label><input id="darkTheme" type="checkbox" checked><label for="darkTheme" class="switch"></label>
+			</div>
 		</nav>
 	</header>
 
+	<!--
+		*
+		*
+		*	Floating WhatsApp
+		*
+		*
+	-->
+	<a href="http://api.whatsapp.com/send?phone=55041996513571" target="_blank" class="floatingWhatsApp">
+		<img src="img/whatsapp-emptied.png" alt="Logo o WhatsApp">
+	</a>
+
 	<main>
+
+		<!--
+			*
+			*
+			* Home
+			*
+			*
+		-->
+		<div class="home" id="home">
+
+			<div class="container">
+
+				<div class="text">
+
+					<h1 class="name">Gabriel Queiroz Schicora</h1>
+					<h2 class="summary">Desenvolvedor de Software</h2>
+
+					<ul>
+						<li style="background-image: url('img/qualifications/php.jpg');"></li>
+						<li style="background-image: url('img/qualifications/html.jpg');"></li>
+						<li style="background-image: url('img/qualifications/css.jpg');"></li>
+						<li style="background-image: url('img/qualifications/python.jpg');"></li>
+						<li style="background-image: url('img/qualifications/php.jpg');"></li>
+						<li style="background-image: url('img/qualifications/python.jpg');"></li>
+						<li style="background-image: url('img/qualifications/css.jpg');"></li>
+						<li style="background-image: url('img/qualifications/html.jpg');"></li>
+						<li style="background-image: url('img/qualifications/php.jpg');"></li>
+					</ul>
+
+				</div><!--End Text-->
+
+				<button class="scrollPage">v</button>
+
+			</div><!--End Container-->
+
+		</div><!--End Home-->
+
 		<div class="container">
 
 			<!--
@@ -75,35 +118,124 @@
 				<div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
 			</div>
 
+		</div><!--End Container-->
+
+		<div class="bgFormation">
+			<div class="container">
+
+				<!--
+					*
+					*
+					* Formation
+					*
+					*
+				-->
+				<h1 class="titlePG target" data-target="#formation-menu-item" id="formation">Formação</h1>
+
+				<ul class="time-line">
+					<li>
+						<div class="year">2019</div>
+						<div class="conection"></div>
+						<h2 class="title">Tecnólogo em Análise e Desenvolvimento de Sistemas</h2>
+						<h3 class="dates"><img src="img/time-line/calendar.png" alt="Icone de Calendário"><span>02/2016 até 08/2019 - 3 anos e 6 meses</span></h3>
+						<h3 class="institution"><img src="img/time-line/institution.png" alt="Icone de Faculdade"><span>Centro Técnologico positivo</span></h3>
+					</li>
+					<li>
+						<div class="year">2015</div>
+						<div class="conection"></div>
+						<h2 class="title">Curso Tecnico em Sistemas para internet</h2>
+						<h3 class="dates"><img src="img/time-line/calendar.png" alt="Icone de Calendário"><span>02/2014 até 06/2015 - 1 ano e 4 meses</span></h3>
+						<h3 class="institution"><img src="img/time-line/institution.png" alt="Icone de Faculdade"><span>PUC-PR</span></h3>
+					</li>
+					<li class="line"></li>
+					<li class="clear"></li>
+				</ul>
+
+			</div><!--End Container-->
+		</div><!--End bgFormation-->
+
+		<div class="container">
+
 			<!--
 				*
 				*
-				* Formation
+				* Experience
 				*
 				*
 			-->
-			<h1 class="titlePG target" data-target="#formation-menu-item" id="formation">Formação</h1>
+			<h1 class="titlePG target" data-target="#experience-menu-item" id="experience">Experiencia</h1>
 
-			<ul class="time-line">
+			<ul class="experiences">
 				<li>
-					<div class="year">2019</div>
-					<div class="conection"></div>
-					<h2 class="title">Tecnólogo em Análise e Desenvolvimento de Sistemas</h2>
-					<h3 class="dates"><img src="img/time-line/calendar.png" alt="Icone de Calendário"><span>02/2016 até 08/2019 - 3 anos e 6 meses</span></h3>
-					<h4 class="institution"><img src="img/time-line/institution.png" alt="Icone de Faculdade"><span>Centro Técnologico positivo</span></h4>
+					<div class="img" style="background-image: url('img/experiences/legulas-solucoes-web.jpg');"></div>
+					<div class="text">
+						<h2 class="function">Desenvolvedor Front End</h2>
+						<h3 class="dates"><img src="img/experiences/calendar.png" alt="Icone de Calendário"><span>06/2018 até Atualmente - 4 meses</span></h3>
+						<h3 class="company"><img src="img/experiences/company.png" alt="Icone de Empresa"><span>Légulas Soluções para WEB.</span></h3>
+					</div>
 				</li>
 				<li>
-					<div class="year">2015</div>
-					<div class="conection"></div>
-					<h2 class="title">Curso Tecnico em Sistemas para internet</h2>
-					<h3 class="dates"><img src="img/time-line/calendar.png" alt="Icone de Calendário"><span>02/2014 até 06/2015 - 1 ano e 4 meses</span></h3>
-					<h4 class="institution"><img src="img/time-line/institution.png" alt="Icone de Faculdade"><span>PUC-PR</span></h4>
+					<div class="img" style="background-image: url('img/experiences/legulas-solucoes-web.jpg');"></div>
+					<div class="text">
+						<h2 class="function">Estágio - Desenvolvedor Front End</h2>
+						<h3 class="dates"><img src="img/experiences/calendar.png" alt="Icone de Calendário"><span>02/2018 até 06/2018 - 4 meses</span></h3>
+						<h3 class="company"><img src="img/experiences/company.png" alt="Icone de Empresa"><span>Légulas Soluções para WEB.</span></h3>
+					</div>
 				</li>
-				<li class="line"></li>
+				<li>
+					<div class="img" style="background-image: url('img/experiences/exercito-brasileiro.jpg');"></div>
+					<div class="text">
+						<h2 class="function">Soldado</h2>
+						<h3 class="dates"><img src="img/experiences/calendar.png" alt="Icone de Calendário"><span>03/2017 até 01/2018 - 10 meses</span></h3>
+						<h3 class="company"><img src="img/experiences/company.png" alt="Icone de Empresa"><span>Sociedade Brasileira de Cefaleia</span></h3>
+					</div>
+				</li>
+				<li>
+					<div class="img" style="background-image: url('img/experiences/sociedade-brasileira-cefaleia.jpg');"></div>
+					<div class="text">
+						<h2 class="function">Estágio - Desenvolvedor PHP</h2>
+						<h3 class="dates"><img src="img/experiences/calendar.png" alt="Icone de Calendário"><span>04/2016 até 03/2017 - 11 meses</span></h3>
+						<h3 class="company"><img src="img/experiences/company.png" alt="Icone de Empresa"><span>Sociedade Brasileira de Cefaléia</span></h3>
+					</div>
+				</li>
 				<li class="clear"></li>
 			</ul>
 
-		</div>
+		</div><!--End Container-->
+
+		<div class="bgQualifications">
+			<div class="container">
+
+				<!--
+					*
+					*
+					* Qualifications
+					*
+					*
+				-->
+				<h1 class="titlePG target" data-target="#qualifications-menu-item" id="qualifications">Qualificações</h1>
+
+				<ul class="qualifications">
+					<li>
+						<div class="img" style="background-image: url('img/qualifications/php.jpg');"></div>
+						<div class="percent" style="background-color: #777bb3; width: 100%"></div>
+					</li>
+					<li>
+						<div class="img" style="background-image: url('img/qualifications/html.jpg');"></div>
+						<div class="percent" style="background-color: #f16529; width: 80%"></div>
+					</li>
+					<li>
+						<div class="img" style="background-image: url('img/qualifications/css.jpg');"></div>
+						<div class="percent" style="background-color: #27aae0; width: 66.6%"></div>
+					</li>
+					<li>
+						<div class="img" style="background-image: url('img/qualifications/python.jpg');"></div>
+						<div class="percent" style="background-color: #ffd53d; width: 22%"></div>
+					</li>
+				</ul>
+
+			</div><!--End Container-->
+		</div><!--End bgQualifications-->
 
 	</main>
 

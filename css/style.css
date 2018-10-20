@@ -48,6 +48,7 @@ header.openned{
 	}
 
 	header nav.menu{
+		position: relative;
 		height: inherit;
 	}
 
@@ -97,159 +98,509 @@ header.openned{
 					color: #FFF;
 				}
 
+		header nav.menu div.changeTheme{
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			padding: 15px 0 15px 20px;
+			width: 240px;
+			background-color: #13673e;
+		}
+
+		header nav.menu div.changeTheme label{
+			vertical-align: middle;
+			color: #FFF;
+			font-size: 13px;
+			display: inline-block;
+		}
+
+		header nav.menu div.changeTheme input{
+			display: none;
+		}
+
+		header nav.menu div.changeTheme label.switch{
+			border: 1px solid #bbbaba;
+			border-radius: 30px;
+			width: 50px;
+			height: 20px;
+			margin-left: 10px;
+			position: relative;
+			transition: 0.1s;
+			background-color: #bbbaba
+		}
+
+		header nav.menu div.changeTheme label.switch:before{
+			content: '';
+			position: absolute;
+			left: 0px;
+			top: 50%;
+			margin-bottom: -50%;
+			transform: translate(0, -50%);
+			transition: 0.5s;
+			width: 0px;
+			height: 18px;
+			background-color: #157546;
+			transition: 0.2s;
+		}
+
+		header nav.menu div.changeTheme label.switch:after{
+			content: '';
+			position: absolute;
+			left: -5px;
+			right: initial;
+			top: 50%;
+			margin-bottom: -50%;
+			transform: translate(0, -50%);
+			transition: 0.5s;
+			width: 25px;
+			height: 25px;
+			background-color: #FFF;
+			border: 1px solid #bbbaba;
+			border-radius: 999px;
+			transition: 0.2s;
+		}
+
+		header nav.menu div.changeTheme input:checked + label.switch:before{
+			width: 100%;
+			border-radius: 30px;
+		}
+
+		header nav.menu div.changeTheme input:checked + label.switch:after{
+			/*right: -5px;*/
+			left: 25px;
+		}
+
+/*
+=====================
+==FLOATING WHATSAPP==
+=====================
+*/
+a.floatingWhatsApp{
+	position: fixed;
+	right: 15px;
+	bottom: 15px;
+	border-radius: 999px;
+	background-color: #13673e;
+	width: 50px;
+	height: 50px;
+	z-index: 999;
+}
+
+/*
+========
+==HOME==
+========
+*/
+main div.home{
+	position: relative;
+	background-image: url('../img/bgHome.jpg');
+	background-size: 100%;
+	background-repeat: repeat;
+	background-attachment: fixed;
+	background-color: #1b1b1b;
+}
+
+	main div.home div.container{
+		height: inherit;
+	}
+
+		main div.home div.container div.text{
+			position: absolute;
+			width: 100%;
+			text-align: center;
+			top: 50%;
+			margin-bottom: -50%;
+			transform: translate(0, -50%);
+		}
+
+			main div.home div.container div.text h1.name{
+				font-size: 65px;
+				color: #bbbaba;
+				margin-bottom: 60px;
+			}
+
+			main div.home div.container div.text h2.summary{
+				font-size: 30px;
+				color: #bbbaba;
+			}
+
+			main div.home div.container div.text ul li{
+				width: 100px;
+				height: 100px;
+				background-size: 80%;
+				background-repeat: no-repeat;
+				background-position: center center;
+				border-radius: 999px;
+				border: 3px solid #157546;
+				background-color: #FFF;
+				display: inline-block;
+				margin-top: 40px;
+				transform: scale(0.2);
+				z-index: 3;
+				position: relative;
+			}
+
+			main div.home div.container div.text ul li:nth-child(5n){
+				transform: scale(1);
+				z-index: 8;
+			}
+
+			main div.home div.container div.text ul li:nth-child(2n+4){
+				transform: scale(0.8);
+				margin-left: -30px;
+	    		margin-right: -30px;
+				z-index: 7;
+			}
+
+			main div.home div.container div.text ul li:nth-child(4n+3){
+				transform: scale(0.7);
+			    margin-left: -10px;
+	    		margin-right: -10px;
+				z-index: 6;
+			}
+
+			main div.home div.container div.text ul li:nth-child(6n+2){
+				transform: scale(0.6);
+			    margin-left: -50px;
+	    		margin-right: -50px;
+				z-index: 5;
+			}
+
+			main div.home div.container div.text ul li:nth-child(8n+1){
+				transform: scale(0.4);
+				margin-left: -20px;
+	    		margin-right: -20px;
+				z-index: 4;
+			}
+
+		main div.home div.container button.scrollPage{
+			position: absolute;
+			left: 50%;
+			margin-right: -50%;
+			transform: translate(-50%);
+			bottom: 30px;
+			border: none;
+			color: #bbbaba;
+			font-size: 50px;
+			font-weight: bold;
+			transition: 0.5s;
+			background-color: transparent;
+		}
+
+		main div.home div.container button.scrollPage:hover{
+			color: #157546;
+		}
+
 /*
 ============
 ==ABOUT ME==
 ============
 */
-main div.container div.about-me div.img{
-	background-position: center;
-	background-size: 100%;
-	border-radius: 999px;
-	border: 5px solid #13673e;
-	width: 250px;
-	height: 250px;
-	background-image: url('../img/gabriel-queiroz-schicora.jpg');
-	display: inline-block;
-	vertical-align: top;
+main div.container div.about-me{
+	padding-bottom: 70px;
 }
 
-main div.container div.about-me div.text{
-	display: inline-block;
-	vertical-align: top;
-	width: 650px;
-	margin-left: 30px;
-	color: #bbbaba;
-	font-weight: normal;
-	font-size: 13px;
-	line-height: 28px;
-	text-align: justify;
-	margin-top: 10px;
-}
+	main div.container div.about-me div.img{
+		background-position: center;
+		background-size: 100%;
+		border-radius: 999px;
+		border: 5px solid #13673e;
+		width: 250px;
+		height: 250px;
+		background-image: url('../img/gabriel-queiroz-schicora.jpg');
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	main div.container div.about-me div.text{
+		display: inline-block;
+		vertical-align: top;
+		width: 650px;
+		margin-left: 30px;
+		color: #bbbaba;
+		font-weight: normal;
+		font-size: 13px;
+		line-height: 28px;
+		text-align: justify;
+		margin-top: 10px;
+	}
 
 /*
 =============
 ==FORMATION==
 =============
 */
-main div.container ul.time-line{
-	position: relative;
+main div.bgFormation{
+	background-image: url('../img/bgFormation.jpg');
+	background-position: center;
+	background-attachment: fixed;
+	background-size: 100%;
+	padding-bottom: 70px;
 }
 
-	main div.container ul.time-line li:not(.line):not(.clear){
-		clear: both;
-		width: 400px;
-		margin: 20px 0;
-		border: 3px solid #157546;
-		border-radius: 10px;
-		padding: 15px;
+	main div.bgFormation div.container ul.time-line{
 		position: relative;
 	}
 
-	main div.container ul.time-line li:nth-child(odd){
-		float: left;
-	}
+		main div.bgFormation div.container ul.time-line li:not(.line):not(.clear){
+			clear: both;
+			width: 400px;
+			margin: 20px 0;
+			border: 3px solid #157546;
+			border-radius: 10px;
+			padding: 15px;
+			position: relative;
+			background-color: #1b1b1b;
+		}
 
-	main div.container ul.time-line li:nth-child(even){
-		float: right;
-	}
+		main div.bgFormation div.container ul.time-line li:nth-child(odd){
+			float: left;
+		}
 
-	main div.container ul.time-line li.line{
+		main div.bgFormation div.container ul.time-line li:nth-child(even){
+			float: right;
+		}
+
+		main div.bgFormation div.container ul.time-line li.line{
+			position: absolute;
+			left: 50%;
+			margin-right: -50%;
+			transform: translate(-50%);
+			top: 0;
+			height: 100%;
+			width: 3px;
+			background-color: #bbbaba;
+		}
+
+		main div.bgFormation div.container ul.time-line li.clear{
+			clear: both;
+			float: none;
+			width: 100%;
+		}
+
+			main div.bgFormation div.container ul.time-line li div.year{
+				position: absolute;
+				top: 50%;
+				margin-bottom: -50%;
+				transform: translate(0, -50%);
+				width: 70px;
+				height: 70px;
+				border-radius: 999px;
+				border: 4px solid #bbbaba;
+				padding-top: 20px;
+				background-color: #000;
+				color: #bbbaba;
+				z-index: 3;
+				text-align: center;
+			}
+
+			main div.bgFormation div.container ul.time-line li:nth-child(odd) div.year{
+				right: -116px;
+			}
+
+			main div.bgFormation div.container ul.time-line li:nth-child(even) div.year{
+				left: -116px;
+			}
+
+			main div.bgFormation div.container ul.time-line li div.conection{
+				position: absolute;
+				width: 50px;
+				height: 3px;
+				top: 50%;
+				margin-bottom: -50%;
+				transform: translate(0, -50%);
+				background: #157546;
+			}
+
+			main div.bgFormation div.container ul.time-line li:nth-child(odd) div.conection{
+				right: -50px;
+				background: -moz-linear-gradient(left, #157546 2%, #bbbaba 100%);
+				background: -webkit-linear-gradient(left, #157546 2%,#bbbaba 100%);
+				background: linear-gradient(to right, #157546 2%,#bbbaba 100%);
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#157546', endColorstr='#bbbaba',GradientType=1 );
+			}
+
+			main div.bgFormation div.container ul.time-line li:nth-child(even) div.conection{
+				left: -50px;
+				background: -moz-linear-gradient(right, #157546 2%, #bbbaba 100%);
+				background: -webkit-linear-gradient(right, #157546 2%,#bbbaba 100%);
+				background: linear-gradient(to left, #157546 2%,#bbbaba 100%);
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#157546', endColorstr='#bbbaba',GradientType=1 );
+			}
+
+			main div.bgFormation div.container ul.time-line li h2.title{
+				font-family: 'Good Times';
+				color: #bbbaba;
+				font-size: 16px;
+			}
+
+			main div.bgFormation div.container ul.time-line li h3.dates span{
+				color: #bbbaba;
+				font-size: 13px;
+				padding: 7px 0;
+				display: inline-block;
+				vertical-align: baseline;
+			}
+
+			main div.bgFormation div.container ul.time-line li h3.institution span{
+				color: #bbbaba;
+				font-size: 13px;
+				display: inline-block;
+				vertical-align: baseline;
+			}
+
+				main div.bgFormation div.container ul.time-line li h3.dates img{
+					display: inline-block;
+					vertical-align: text-top;
+					margin-right: 10px;
+				}
+
+				main div.bgFormation div.container ul.time-line li h3.institution img{
+					display: inline-block;
+					vertical-align: text-top;
+					margin-right: 10px;
+				}
+
+/*
+==============
+==EXPERIENCE==
+==============
+*/
+main ul.experiences li{
+	position: relative;
+	clear: both;
+	margin: 5px 0;
+	height: 250px;
+}
+
+main ul.experiences li.clear{
+	height: 1px;
+}
+
+	main ul.experiences li div.img{
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: 100%;
+		border-radius: 999px;
+		border: 5px solid #13673e;
+		background-color: #FFF;
+		width: 250px;
+		height: 250px;
 		position: absolute;
-		left: 50%;
-		margin-right: -50%;
-		transform: translate(-50%);
-		top: 0;
-		height: 100%;
-		width: 3px;
-		background-color: #bbbaba;
 	}
 
-	main div.container ul.time-line li.clear{
-		clear: both;
-		float: none;
-		width: 100%;
+	main ul.experiences li:nth-child(odd) div.img{
+		left: 0;
 	}
 
-		main div.container ul.time-line li div.year{
-			position: absolute;
-			top: 50%;
-			margin-bottom: -50%;
-			transform: translate(0, -50%);
-			width: 70px;
-			height: 70px;
-			border-radius: 999px;
-			border: 4px solid #bbbaba;
-			padding-top: 20px;
-			background-color: #000;
+	main ul.experiences li:nth-child(even) div.img{
+		right: 0;
+	}
+
+	main ul.experiences li div.text{
+		background-color: #13673e;
+		width: 90%;
+		height: 200px;
+		margin-top: 25px;
+		padding: 20px 0;
+		border-radius: 10px;
+	}
+
+	main ul.experiences li:nth-child(odd) div.text{
+		float: right;
+		padding-left: 170px;
+	}
+
+	main ul.experiences li:nth-child(even) div.text{
+		float: left;
+		padding-right: 170px;
+		text-align: right;
+	}
+
+		main ul.experiences li div.text h2.function{
 			color: #bbbaba;
-			z-index: 3;
-			text-align: center;
-		}
-
-		main div.container ul.time-line li:nth-child(odd) div.year{
-			right: -116px;
-		}
-
-		main div.container ul.time-line li:nth-child(even) div.year{
-			left: -116px;
-		}
-
-		main div.container ul.time-line li div.conection{
-			position: absolute;
-			width: 50px;
-			height: 3px;
-			top: 50%;
-			margin-bottom: -50%;
-			transform: translate(0, -50%);
-			background: #157546;
-		}
-
-		main div.container ul.time-line li:nth-child(odd) div.conection{
-			right: -50px;
-			background: -moz-linear-gradient(left, #157546 2%, #bbbaba 100%);
-			background: -webkit-linear-gradient(left, #157546 2%,#bbbaba 100%);
-			background: linear-gradient(to right, #157546 2%,#bbbaba 100%);
-			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#157546', endColorstr='#bbbaba',GradientType=1 );
-		}
-
-		main div.container ul.time-line li:nth-child(even) div.conection{
-			left: -50px;
-			background: -moz-linear-gradient(right, #157546 2%, #bbbaba 100%);
-			background: -webkit-linear-gradient(right, #157546 2%,#bbbaba 100%);
-			background: linear-gradient(to left, #157546 2%,#bbbaba 100%);
-			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#157546', endColorstr='#bbbaba',GradientType=1 );
-		}
-
-		main div.container ul.time-line li h2.title{
 			font-family: 'Good Times';
-			color: #bbbaba;
-			font-size: 13px;
+			font-size: 16px;
 		}
 
-		main div.container ul.time-line li h3.dates span{
-			color: #bbbaba;
-			font-size: 12px;
-			padding: 7px 0;
-			display: inline-block;
-			vertical-align: baseline;
-		}
+			main ul.experiences li div.text h3.dates{
+				margin: 10px 0;
+			}
 
-		main div.container ul.time-line li h4.institution span{
-			color: #bbbaba;
-			font-size: 11px;
-			display: inline-block;
-			vertical-align: baseline;
-		}
-
-			main div.container ul.time-line li h3.dates img{
+			main ul.experiences li div.text h3.dates img{
 				display: inline-block;
 				vertical-align: text-top;
 				margin-right: 10px;
 			}
 
-			main div.container ul.time-line li h4.institution img{
+			main ul.experiences li div.text h3.company img{
 				display: inline-block;
 				vertical-align: text-top;
 				margin-right: 10px;
+			}
+
+			main ul.experiences li div.text h3.dates span{
+				font-size: 13px;
+				color: #bbbaba;
+				display: inline-block;
+				vertical-align: baseline;	
+			}
+
+			main ul.experiences li div.text h3.company span{
+				font-size: 13px;
+				color: #bbbaba;
+				display: inline-block;
+				vertical-align: baseline;	
+			}
+
+/*
+==================
+==QUALIFICATIONS==
+==================
+*/
+main div.bgQualifications{
+	background-image: url('../img/bgQualifications.jpg');
+	background-position: center;
+	background-attachment: fixed;
+	background-size: 100%;
+	padding-bottom: 70px;
+}
+
+	main div.bgQualifications div.container ul.qualifications{
+		text-align: center;
+	}
+
+		main div.bgQualifications div.container ul.qualifications li{
+			width: 400px;
+			height: 28px;
+			display: inline-block;
+			margin: 20px;
+			position: relative;
+			border-radius: 5px;
+			border: 2px solid #157546;
+		}
+
+			main div.bgQualifications div.container ul.qualifications li div.img{
+				background-size: 80%;
+				background-repeat: no-repeat;
+				background-position: center center;
+				position: absolute;
+				left: -10px;
+				top: 50%;
+				margin-bottom: -50%;
+				transform: translate(0, -50%);
+				width: 60px;
+				height: 60px;
+				border-radius: 999px;
+				border: 2px solid #13673e;
+				background-color: #FFF;
+			}
+
+			main div.bgQualifications div.container ul.qualifications li div.percent{
+				border-radius: 2px;
+				height: 24px;
+				background-image: url('../img/bgPercent.png');
+				background-position: left;
+				background-repeat: repeat;
+				background-size: auto 100%;
 			}
