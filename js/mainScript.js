@@ -14,8 +14,8 @@
  *                                                              |
  *===============================================================
  */
-var currentPage = window.location.href.split('/')[4].split('.')[0]; //Current Page
-currentPage = (currentPage == '')? 'index' : currentPage ; //Set 'index' name if not implicit in URL
+//var currentPage = window.location.href.split('/')[4].split('.')[0]; //Current Page
+//currentPage = (currentPage == '')? 'index' : currentPage ; //Set 'index' name if not implicit in URL
 var screenHeight = $(window).height(); //Screen Height
 var screenWidth = $(window).width(); //Screen Width
 var mobileResolution = 960; //Default Mobile Resolution
