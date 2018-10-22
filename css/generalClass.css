@@ -19,6 +19,18 @@ body {
     clear: both;
 }
 
+/*Scroll Bar*/
+::-webkit-scrollbar-track {
+    background-color: #1b1b1b;
+}
+::-webkit-scrollbar {
+    width: 2px;
+    background: #1b1b1b;
+}
+::-webkit-scrollbar-thumb {
+    background: #bbbaba;
+}
+
 /*Toogle Class*/
 .desktop{
     display: block;

@@ -350,15 +350,16 @@ main div.bgFormation{
 			border-radius: 10px;
 			padding: 15px;
 			position: relative;
-			background-color: #1b1b1b;
 		}
 
 		main div.bgFormation div.container ul.time-line li:nth-child(odd){
 			float: left;
+			background-color: #157546;
 		}
 
 		main div.bgFormation div.container ul.time-line li:nth-child(even){
 			float: right;
+			background-color: #1b1b1b;
 		}
 
 		main div.bgFormation div.container ul.time-line li.line{
@@ -470,7 +471,7 @@ main ul.experiences li{
 	position: relative;
 	clear: both;
 	margin: 5px 0;
-	height: 250px;
+	height: 220px;
 }
 
 main ul.experiences li.clear{
@@ -484,8 +485,8 @@ main ul.experiences li.clear{
 		border-radius: 999px;
 		border: 5px solid #13673e;
 		background-color: #FFF;
-		width: 250px;
-		height: 250px;
+		width: 220px;
+		height: 220px;
 		position: absolute;
 	}
 
@@ -498,9 +499,9 @@ main ul.experiences li.clear{
 	}
 
 	main ul.experiences li div.text{
-		background-color: #13673e;
+		border: 5px solid #157546;
 		width: 90%;
-		height: 200px;
+		height: 170px;
 		margin-top: 25px;
 		padding: 20px 0;
 		border-radius: 10px;
@@ -509,12 +510,14 @@ main ul.experiences li.clear{
 	main ul.experiences li:nth-child(odd) div.text{
 		float: right;
 		padding-left: 170px;
+		background-color: #157546;
 	}
 
 	main ul.experiences li:nth-child(even) div.text{
 		float: left;
 		padding-right: 170px;
 		text-align: right;
+		background-color: #1b1b1b;
 	}
 
 		main ul.experiences li div.text h2.function{
@@ -604,3 +607,146 @@ main div.bgQualifications{
 				background-repeat: repeat;
 				background-size: auto 100%;
 			}
+
+/*
+============
+==PROJECTS==
+============
+*/
+main div.container ul.projects{
+	text-align: center;
+	margin-bottom: 70px;
+}
+
+	main div.container ul.projects li{
+		display: inline-block;
+		vertical-align: middle;
+		background-size: 100%;
+		background-repeat: no-repeat;
+		background-color: #FFF;
+		background-position: top center;
+		border: 3px solid #157546;
+		border-radius: 999px;
+		width: 260px;
+		height: 260px;
+		position: relative;
+		margin: 30px 25px;
+		transition: 0.5s;
+	}
+
+	main div.container ul.projects li:hover{
+		background-size: 110%;
+	}
+
+		main div.container ul.projects li a{
+			width: inherit;
+			height: inherit;
+		}
+
+			main div.container ul.projects li span{
+				position: absolute;
+				left: 50%;
+				margin-right: -50%;
+				bottom: -30px;
+				color: #bbbaba;	
+				transform: translate(-50%);
+				font-size: 14px;
+				font-family: 'Good Times';
+			}
+
+/*
+==============
+==TALK TO ME==
+==============
+*/
+main div.bgContact{
+	background-image: url('../img/bgContact.jpg');
+	background-position: center;
+	background-attachment: fixed;
+	background-size: 100%;
+	padding-bottom: 70px;
+}
+
+	main div.bgContact div.container ul.contact{
+		text-align: center;
+	}
+
+		main div.bgContact div.container ul.contact li{
+			display: inline-block;
+			width: 400px;
+			margin: 20px;
+			position: relative;
+		}
+
+			main div.bgContact div.container ul.contact li img{
+				width: 30px;
+				display: inline-block;
+				vertical-align: middle;
+				margin-right: 10px;
+			}
+
+			main div.bgContact div.container ul.contact li div.text{
+				display: inline-block;
+				vertical-align: top;
+				position: relative;
+				text-align: left;
+				padding-bottom: 10px;
+			}
+
+			main div.bgContact div.container ul.contact li div.text:after{
+				content: '';
+				position: absolute;
+				left: 0;
+				bottom: 0px;
+				width: 0px;
+				height: 3px;
+				background-color: #157546;
+				transition: 0.5s;
+			}
+
+			main div.bgContact div.container ul.contact li:hover div.text:after{
+				width: 100px;
+			}
+
+				main div.bgContact div.container ul.contact li div.text h2{
+					font-size: 20px;
+					font-family: 'Good Times';
+					color: #bbbaba;
+					margin: 3px 0 10px 0;
+				}
+
+				main div.bgContact div.container ul.contact li div.text h3{
+					color: #bbbaba;
+					font-size: 18px;	
+				}
+
+/*
+==========
+==FOOTER==
+==========
+*/
+footer{
+	text-align: center;
+	padding: 100px 0;
+}
+
+	footer div.container ul li{
+		display: inline-block;
+		vertical-align: middle;
+		margin: 0 10px 20px 10px;
+		padding: 5px 0;
+		width: 20px;
+		border-bottom: 1px solid transparent;
+	}
+
+	footer div.container h2{
+		color: #bbbaba;
+		margin-top: 30px;
+		font-size: 14px;
+	}
+
+		footer div.container h2 span{
+			color: #bbbaba;
+		    font-family: 'Good Times';
+		    margin: 0 5px;
+		}
