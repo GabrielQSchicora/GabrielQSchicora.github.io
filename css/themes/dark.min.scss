@@ -1,0 +1,147 @@
+//Variables
+$gray: #bbbaba;
+$dark: #1b1b1b;
+$black: #000;
+$green: #157546;
+
+/*
+=================
+==GENERAL CLASS==
+=================
+*/
+body {
+    background-color: $dark;
+}//End Body
+
+/*Scroll Bar*/
+::-webkit-scrollbar-track {
+    background-color: $dark;
+}//End Scroll Arows
+
+::-webkit-scrollbar {
+    width: 2px;
+    background: $dark;
+}//End Scroll Background
+
+::-webkit-scrollbar-thumb {
+    background: $gray;
+}//End Scroll Bar
+
+/*Text Class*/
+.titlePG{
+    color: $gray;
+}//End Title Page
+
+/*
+=====================
+==FLOATING WHATSAPP==
+=====================
+*/
+a.floatingWhatsApp img.light{
+	display: none;
+}//End Floating Whatsapp Image On Light Theme
+
+/*
+========
+==MAIN==
+========
+*/
+main{
+	/*
+	============
+	==ABOUT ME==
+	============
+	*/
+	div.container div.about-me div.text{
+		color: $gray;
+	}//End About-me Text
+
+	/*
+	=============
+	==FORMATION==
+	=============
+	*/
+	div.bgFormation div.container ul.time-line li{
+		&:nth-child(even){
+			background-color: $dark;
+
+			div.conection{
+				background: -moz-linear-gradient(right, $green 2%, $gray 100%);
+				background: -webkit-linear-gradient(right, $green 2%,$gray 100%);
+				background: linear-gradient(to left, $green 2%,$gray 100%);
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$green', endColorstr='$gray',GradientType=1 );
+			}//End even item Conection
+
+		}//End even item
+
+		&:nth-child(odd){
+			div.conection{
+				background: -moz-linear-gradient(left, $green 2%, $gray 100%);
+				background: -webkit-linear-gradient(left, $green 2%,$gray 100%);
+				background: linear-gradient(to right, $green 2%,$gray 100%);
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$green', endColorstr='$gray',GradientType=1 );
+			}//End odd item conection
+
+		}//End odd item
+
+		&.line{
+			background-color: $gray;
+		}//End item line
+
+		div.year{
+			border-color: $gray;
+			background-color: $black;
+			color: $gray;
+		}//End year
+
+	}//End Time-Line item
+
+	/*
+	==============
+	==EXPERIENCE==
+	==============
+	*/
+	ul.experiences li{
+		&:nth-child(even){
+			div.text{
+				background-color: $dark;
+			}//End Even item text
+
+		}//End Even item
+
+		div.text{
+			h2.function, h3.dates span, h3.company span{
+				color: $gray;
+			}//End Texts
+
+		}//End Text div
+
+	}//End item Experiences
+
+	/*
+	============
+	==PROJECTS==
+	============
+	*/
+	div.container ul.projects li span{
+		color: $gray;
+	}//End Project Name
+
+}//End Main
+
+/*
+==========
+==FOOTER==
+==========
+*/
+footer div.container ul.light{
+	display: none;
+}//End List to light theme
+
+footer div.container h2{
+	color: $gray;
+	span{
+		color: $gray;
+	}//End footer text pipe
+
+}//End Footer Text

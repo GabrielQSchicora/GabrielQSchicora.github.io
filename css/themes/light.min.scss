@@ -1,0 +1,182 @@
+//Variables
+$gray: #bbbaba;
+$dark: #1b1b1b;
+$white: #f1f1f1;
+$black: #000;
+$green: #157546;
+
+/*
+========
+==Page==
+========
+*/
+body {
+    background-color: $white;
+}
+
+/*Scroll Bar*/
+::-webkit-scrollbar-track {
+    background-color: $gray;
+}
+::-webkit-scrollbar {
+    width: 2px;
+    background: $gray;
+}
+::-webkit-scrollbar-thumb {
+    background: $dark;
+}
+
+/*Text Class*/
+.titlePG{
+    color: $dark;
+}
+
+/*
+=====================
+==FLOATING WHATSAPP==
+=====================
+*/
+a.floatingWhatsApp img.dark{
+	display: none;
+}
+
+/*
+========
+==MAIN==
+========
+*/
+main {
+	/*
+	============
+	==ABOUT ME==
+	============
+	*/
+	div.container div.about-me div.text{
+		color: $dark;
+	}//End About-me Text
+
+	/*
+	=============
+	==FORMATION==
+	=============
+	*/
+	div.bgFormation{
+		div.container{
+			h1.titlePG{
+				color: $gray;
+			}//End Formation title
+
+			ul.time-line{
+				li{
+					&:nth-child(even){
+						background-color: $dark;
+						div.conection{
+							background: -moz-linear-gradient(right, $green 2%, $gray 100%);
+							background: -webkit-linear-gradient(right, $green 2%,$gray 100%);
+							background: linear-gradient(to left, $green 2%,$gray 100%);
+							filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$green', endColorstr='$gray',GradientType=1 );
+						}//End Conection
+
+					}//End Time-line even item
+
+					&:nth-child(odd){
+						div.conection{
+							background: -moz-linear-gradient(left, $green 2%, $gray 100%);
+							background: -webkit-linear-gradient(left, $green 2%,$gray 100%);
+							background: linear-gradient(to right, $green 2%,$gray 100%);
+							filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$green', endColorstr='$gray',GradientType=1 );
+						}//End Conection
+
+					}//End Time-line even item
+
+					&.line{
+						background-color: $gray;
+					}//End Time-line item with class line
+
+					div.year{
+						border-color: $gray;
+						background-color: $black;
+						color: $gray;
+					}
+
+				}//End Time-line item
+
+			}//End Time-line
+
+		}//End Formation Container
+
+	}//End Formation
+
+	/*
+	==============
+	==EXPERIENCE==
+	==============
+	*/
+	ul.experiences li{
+		&:nth-child(even){
+			div.text{
+				background-color: $dark;
+			}//End even list item text
+
+		}//End even list item
+
+		div.text{
+			h2.function, h3.dates span, h3.company span{
+				color: $gray;
+			}//End Texts
+
+		}//End Text div
+
+	}//End experiences list item
+
+	/*
+	=============
+	==FORMATION==
+	=============
+	*/
+	div.bgQualifications div.container h1.titlePG{
+		color: $gray;
+	}//End Qualifications title
+
+	/*
+	============
+	==PROJECTS==
+	============
+	*/
+	div.container ul.projects li span{
+		color: $dark;
+	}//End project name
+
+	/*
+	==============
+	==TALK TO ME==
+	==============
+	*/
+	div.bgContact div.container h1.titlePG{
+		color: $gray;
+	}//End Talk to me title
+
+}//End Main
+
+/*
+==========
+==FOOTER==
+==========
+*/
+footer{
+	div.container{
+		ul.dark{
+			display: none;
+		}//End list to dark theme
+
+		h2{
+			color: $dark;
+			span{
+				color: $dark;
+			}//End Footer text pipe
+
+		}//End Footer Text
+
+	}//End Container
+
+}//End Footer

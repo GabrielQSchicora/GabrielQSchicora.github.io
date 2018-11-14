@@ -14,8 +14,9 @@
  *                                                              |
  *===============================================================
  */
-//var currentPage = window.location.href.split('/')[4].split('.')[0]; //Current Page
-//currentPage = (currentPage == '')? 'index' : currentPage ; //Set 'index' name if not implicit in URL
+var currentPage = window.location.href.split('/'); //Current Page
+currentPage = currentPage[currentPage.length - 1].split('.')[0]; //Get last piece of URL
+currentPage = (currentPage == '')? 'index' : currentPage ; //Set 'index' name if not implicit in URL
 var screenHeight = $(window).height(); //Screen Height
 var screenWidth = $(window).width(); //Screen Width
 var mobileResolution = 960; //Default Mobile Resolution
@@ -41,49 +42,10 @@ $(document).ready(function(){
 
   /*
    *
-   * Create input masks
-   *
-   */
-  $(".fone-form").mask("(99) 9999-9999#"); //Use class fone-form
-  $(".cpf-form").mask("999.999.999-99"); //Use class cpf-form
-  $(".rg-form").mask("99.999.999-9"); //Use class rg-form 
-  $(".cep-form").mask("99999-999"); //Use class cep-form
-  $(".cnpj-form").mask("99.999.999/9999-99"); //Use class cnpj-form
-  $(".data-form").mask("99/99/9999"); //Use class data-form
-  $(".money-form").maskMoney({prefix:'R$ ', allowNegative: false, thousands:'.', decimal:','}); //Use class money-form
-
-  /*
-   *
    * Call function setMainMinimumHeight
    *
    */
   setMainMinimumHeight();
-
-  /*
-   *
-   * Call funtion to stack fancyboxes
-   *
-   */
-  stackFancyboxes();
-
-  /*
-   *
-   * Close floating fancybox on click in "X"
-   *
-   */
-  $('.messageBox img').click(function(){
-    $(this).parent().fadeOut();
-    clearTimeout(time);
-  });//End close fancybox on click in "X"
-
-  /*
-   *
-   * Close floating fancybox after 2,5 seconds
-   *
-   */
-  setTimeout(function(){
-    $('.messageBox').fadeOut('slow');
-  }, 2500);//End close fancybox with timer
 
   /*
    *
@@ -100,53 +62,49 @@ $(document).ready(function(){
   });//End Call fancybox
 
   /*
-   *
-   * Create a mask for file inputs
-   *
-   */
-    /*
-     *
-     * On click in field mask triggers click event to file field
-     *
-     */
-    $('input.fileMask').click(function(){
-  
-      target = '#'+$(this).data('path_id');
-      $(target).trigger('click');
-  
-    });//End fileMask click
-  
-    /*
-     *
-     * On change file field, set fiel mask value with archive path
-     *
-     */
-    $('input[type=file]').change(function(){
-  
-      target = '.mask_for_'+$(this).prop('id');
-      $(target).val($(this).val());
-  
-    });//End input file change
-
-  /*
   *
   * Open and close menu
   *
   */
   $('header div.menuComand').click(function(){
-    if($(this).parent().hasClass('openned')){
-      $(this).parent().removeClass('openned');
-    }else{
-      $(this).parent().addClass('openned');
-    }
+    $(this).parent().toggleClass('openned');
   });
 
   /*
   *
-  * Set height to first div
+  * Create anchor
   *
   */
-  $('div.home').css('height', screenHeight);
+  $('.scrollTarget').click(function(){
+    var target = $(this).data('target');
+    $('html, body').animate({
+      scrollTop: $(target).offset().top
+    }, 1000);
+  });
+
+  /*
+  *
+  * Add active class on click in menu item
+  *
+  */
+  $('nav.menu ul li').click(function(){
+    $('header div.menuComand').trigger('click');
+    $(this).siblings().removeClass('active');
+    $(this).addClass('active');
+  });
+
+  /*
+  *
+  * Change themes
+  *
+  */
+  $('div.changeTheme input#darkTheme').change(function(){
+    if($(this).is(':checked')){
+      $('link.themeDefinition').attr('href', 'css/themes/dark.min.css');
+    }else{
+      $('link.themeDefinition').attr('href', 'css/themes/light.min.css');
+    }
+  });
 
 });//End Document Ready
 
@@ -175,15 +133,6 @@ $(window).resize(function(){
 
   /*
    *
-   * Remove 'smaller' class when the page width is less than 960px (Mobile resolution)
-   *
-   */
-  if(screenWidth < mobileResolution){
-    $('header, main').removeClass('smaller');
-  }
-
-  /*
-   *
    * Show the menu if change from mobile view to desktop view with resize
    *
    */
@@ -191,12 +140,6 @@ $(window).resize(function(){
     $('.menu').show();
   }
 
-  /*
-  *
-  * Set height to first div
-  *
-  */
-  $('div.home').css('height', screenHeight);
 
 });//End Window Resize
 
@@ -208,17 +151,63 @@ $(window).resize(function(){
  *===============================================================
  */
 $(window).scroll(function(){
+
   /*
-   *
-   * Set smaller class to menu if not is in mobile
-   *
-   */
-  if(screenWidth > mobileResolution){
-    if($(window).scrollTop() > 50){
-      $('header, main').addClass('smaller');
-    }else{
-      $('header, main').removeClass('smaller');
-    }
+  *
+  * Create efect on div item appear in 30% of window
+  *
+  */
+  var objectOffset = $('h1#about-me').offset().top;
+  var windowScroll = $(window).scrollTop();
+  if(objectOffset <= (windowScroll + (screenHeight * 0.5))){
+    $('div.about-me div.img, div.about-me div.text').addClass('show');
+  }
+
+  objectOffset = $('div.bgFormation').offset().top;
+  if(objectOffset <= (windowScroll + (screenHeight * 0.5))){
+    $('ul.time-line li:not(.line):not(.clear)').each(function(){
+      $(this).addClass('show');
+    });
+  }
+
+  objectOffset = $('h1#experience').offset().top;
+  if(objectOffset <= (windowScroll + (screenHeight * 0.5))){
+    $('ul.experiences li').each(function(){
+      $(this).addClass('show');
+    });
+  }
+
+  objectOffset = $('div.bgQualifications').offset().top;
+  if(objectOffset <= (windowScroll + (screenHeight * 0.5))){
+    $('ul.qualifications li').each(function(){
+      $(this).children('div.percent').removeClass('zero');
+    });
+  }
+
+  objectOffset = $('h1#projects').offset().top;
+  if(objectOffset <= (windowScroll + (screenHeight * 0.5))){
+    $('ul.projects li').each(function(){
+      $(this).addClass('show');
+    });
+  }
+
+  objectOffset = $('div.bgContact').offset().top;
+  if(objectOffset <= (windowScroll + (screenHeight * 0.5))){
+    $('ul.contact li').each(function(){
+      $(this).addClass('show');
+    });
+  }
+
+  if(windowScroll < (screenHeight * 0.5)){
+    $('nav.menu ul li').removeClass('active');
+    $('nav.menu ul li#home-menu-item').addClass('active');
+  }else{
+    $('h1.target').each(function(){
+      if(windowScroll > ($(this).offset().top - (screenHeight * 0.25))){
+        $('nav.menu ul li').removeClass('active');
+        $('nav.menu ul li'+$(this).data('target')).addClass('active');
+      }
+    });
   }
 
 });//End Window Scroll
@@ -247,141 +236,92 @@ function setMainMinimumHeight(){
 
 /*
  *
- * Stack erros, sucess or warning floater fancyboxes
+ * Return difference between two dates
  *
- * @return void
- *
- */
-function stackFancyboxes(){
-  //Variables
-  var lastMargin = 0;
-  var lastHeight = 0;
-
-  //Scrolls through all messageBox elements
-  $('.messageBox').each(function(){
-
-    //Adds margin top
-    var margin = (lastMargin + lastHeight) + "px";
-
-    //Apply margin and show messageBox
-    $(this).css('margin-top', margin).fadeIn();
-
-    //Add last margin and last height to use in next messageBox
-    lastMargin = parseInt($(this).css('margin-top').replace(/px/, '')) + 20;
-    lastHeight = $(this).outerHeight();
-
-  });
-}//End function stackFancyboxes
-
-/*
- *
- * Send a link to the current page by email
- *
- * @return void
+ * @param initialDate Initial date do get difference
+ * @param finalDate Final date do get difference
+ * @param type type of return (miliseconds, seconds, minutes, hours, days, months, years or text)
  *
  */
-function sendEmailWithCurrentPage(){
-	window.location.href="mailto:?subject="+document.title+"&body="+escape(window.location.href);
-};//End function sendEmailWithCurrentPage
+function getDateDiff(initialDate, finalDate, type = "days"){
 
-/*
- *
- * Open a fancybox manually
- *
- * @param href Path to fancybox content
- * @param link Link to redirect by click in fancybox
- * @param target Link opening type (_self, _blank, etc...)
- *
- */
-function openFancybox(href,link,target){
-  /*
-   *
-   *
-   * @param href Path to fancybox content
-   * @param padding Inner fancybox space
-   * @param overlayShow Set if show a background overlay
-   * @param overlayOpacity Set opacity of background overlay
-   * @param overlayColor Set color of background overlay
-   *
-   */
-  $.fancybox({
-    'href'   : href,
-    'padding'  : 10,
-    'overlayShow': true,
-    'overlayOpacity': 0.3,
-    'overlayColor' : '#000000',
-    afterLoad : function() {
-      if(link != undefined){
-        this.inner.wrap( '<a href="' + link + '" target="' + target + '" />' );
-      }
-    }
-  });//End Function to call fancybox
+  //Get Dates UTC
+  var utc1 = Date.UTC(initialDate.getFullYear(), initialDate.getMonth(), initialDate.getDate());
+  var utc2 = Date.UTC(finalDate.getFullYear(), finalDate.getMonth(), finalDate.getDate());
+  var division;
+  var result = '';
 
-}//End Function openFancybox
-
-/*
- *
- * Facebook Script
- *
- */
-/*(function(d, s, id) {
-var js, fjs = d.getElementsByTagName(s)[0];
-if (d.getElementById(id)) return;
-js = d.createElement(s); js.id = id;
-js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.9";
-fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));*/
-
-/*
- *===============================================================
- *                                                              |
- *                          Utilities                           |
- *                                                              |
- *===============================================================
- */
-/*
---------------- To Create Fancyboxes manualy ---------------
-
-    //To Create errors messages, declare a errors array and use push method to add erros
-
-    //Remove all messageBox from DOM
-    $('.messageBox').remove();
-
-    //Remove repeated elements
-    errors = errors.filter(function(este, i) {
-        return errors.indexOf(este) == i;
-    })
-
-    //Check for errors
-    if(errors.length == 0){
-
-      
-
+  //Check return type and set division
+  try{
+    if(type == 'miliseconds'){
+      division = 1;
+    }else if(type == 'seconds'){
+      division = 1000;
+    }else if(type == 'minutes'){
+      division = 1000 * 60;
+    }else if(type == 'hours'){
+      division = 1000 * 60 * 60;
+    }else if(type == 'days'){
+      division = 1000 * 60 * 60 * 24;
+    }else if(type == 'months' || type == 'text'){
+      division = 1000 * 60 * 60 * 24 * 30.5833333;
+    }else if(type == 'years'){
+      division = 1000 * 60 * 60 * 24 * 30.5833333 * 12;
     }else{
-
-      for(var i = 0; i < errors.length; i++){
-
-        //Add messages after header
-        $('header').append("<div class='messageBox error'>"+errors[i]+"<img src='timthumb.php?src=img/close.png&w=25&h=25' alt='close'></div>");
-
-      }
-      
-      //Hide all messageBox
-      $('.messageBox').hide();
-
-      //Call funtion to stack fancyboxes
-      stackFancyboxes();
-
-      //Close floating fancybox on click in "X"
-      $('.messageBox img').click(function(){
-        $(this).parent().fadeOut();
-        clearTimeout(time);
-      });
-
-      //Close floating fancybox after 2,5 seconds
-      var time = setTimeout(function(){
-        $('.messageBox').fadeOut('slow');
-      }, 2500);
-
+            //Throw type invalid Exception
+          throw "Return date type "+type+" is invalid. Use miliseconds, seconds, minutes, hours, days, months, years or text.";
     }
+  }catch(e){
+        //Show errors on Log
+    console.error(e);
+    return false;
+  }
+
+  //Get difference between dates
+  var diff = Math.floor(utc2 - utc1) / division;
+
+  //If type is text, create a text with years and months
+  if(type == 'text'){
+
+    //Get amount of years
+    var year = Math.floor(diff/12);
+    //Get amount of months
+    var month = Math.floor(diff%12);
+
+    //Check if write years
+    if(year > 0){
+      result = year.toString() + ' ' 
+      result += (year > 1)?'anos':'ano';
+      result += (month > 0)?' e ':'';
+    }
+    //Check if write months
+    if(month > 0){
+      result += month.toString() + ' ';
+      result += (month > 1)?'meses':'mês';
+    }else{
+      //If have lass than 1 month
+      if(year < 1){
+        result += '0 meses'
+      }
+    }
+
+  }else{
+    //If return type is not text, result receive difference
+    result = Math.floor(diff);
+  }
+
+  return result;
+}
+
+/*
+*
+* Get Date and return formated (mm/yyyy)
+*
+* @param date Date to format
+* @return mm/yyyy date formated
+*
 */
+function getDateFormatedToShow(date){
+  month = (date.getMonth()+1 < 10)?'0'+(date.getMonth()+1):date.getMonth()+1;
+  return  month + "/" + date.getFullYear();
+}

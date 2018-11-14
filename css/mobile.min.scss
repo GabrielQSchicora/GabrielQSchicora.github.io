@@ -1,0 +1,319 @@
+/*||||||||||||||||||||||||||||||||||||||*/
+/*||||||||   RESOLUÇÃO MOBILE   ||||||||*/
+/*||||||||||||||||||||||||||||||||||||||*/
+@media (min-width: 0px) and (max-width: 959px){
+
+	/*
+	=================
+	==GENERAL TOOLS==
+	=================
+	*/
+	.container{
+		width: 100%; 
+		display: block;
+	}//End Container
+
+	.desktop{
+		display: none !important;
+	}//End Desktop
+
+	.mobile{
+		display: block !important;
+	}//End Mobile
+
+	.messageBox img{
+		display: none;
+	}//End messageBox Image
+
+	header{
+		div.menuComand{
+			box-shadow: 3px 3px 25px 0px rgba(0,0,0,0.2);
+		}
+	}
+
+	main{
+		//============
+		//==ABOUT ME==
+		//============
+		div.about-me{
+			div.img{
+				transform: scale(0);
+				transition-duration: 0.5s;
+				&.show{
+					display: block;
+					margin: 5px auto;
+					transform: scale(1);
+				}
+			}//End About-me Image
+
+			div.text.show{
+				display: block;
+				width: 100%;
+				padding: 10px;
+				margin-left: 0px;
+			}//End About-me Text
+
+		}//End About-me
+
+		//=============
+		//==FORMATION==
+		//=============
+		div.bgFormation{
+			div.container ul.time-line li{
+				&:not(.line):not(.clear){
+					width: 98%;
+					text-align: center;
+					display: block;
+					&:nth-child(odd),
+					&:nth-child(even){
+						float: none;
+						transition-duration: 0.5s;
+						transition-property: opacity;
+						opacity: 0;
+						&.show{
+							margin: 140px auto 0 auto;
+							opacity: 1;
+						}//End odd and even Formation Item on show
+
+					}//End odd and even Formation Item
+
+				}//End Formation Item
+
+				&:first-child{
+					margin-top:120px !important;
+				}//End Last Formation Item
+
+				div.conection{
+					right: initial !important;
+					left: 50% !important;
+					margin-right: -50%;
+					margin-bottom: initial !important;
+					top: -30px !important;
+					transform: translate(-50%) !important;
+					width: 3px !important;
+					height: 30px !important;
+				}//End Connextion 
+
+				div.year{
+					right: initial !important;
+					left: 50% !important;
+					margin-right: -50%;
+					margin-bottom: initial !important;
+					top: -100px !important;
+					transform: translate(-50%) !important;
+				}//End Year
+
+				&.line{
+					display: none;
+				}//End Formation item with class line
+
+			}//End Formation Item
+
+		}//End Formation
+
+		//==============
+		//==EXPERIENCE==
+		//==============
+		ul.experiences li{
+			margin: 5px 10px;
+		}//End Experience
+
+		//==================
+		//==QUALIFICATIONS==
+		//==================
+		div.bgQualifications div.container ul.qualifications li{
+			width: 90% !important;
+			margin: 40px auto !important;
+			display: block !important;
+		}//End qualification iten
+
+		//===========
+		//==CONTACT==
+		//===========
+		div.bgContact div.container ul.contact li{
+			display: block;
+			width: 100%;
+			margin: 5px 0;
+			&:first-child{
+				margin-bottom: 50px;
+			}//End First Contact Item
+
+			img{
+				display: block;
+				margin: 5px auto;
+			}//End Contact image
+
+			div.text{
+				display: block;
+				padding: 0 10px;
+				text-align: center;
+			}//End Contact Text
+
+		}//End Contact Item
+
+	}//End main
+
+}//End Mobile Resolution
+
+/*|||||||||||||||||||||||||||||||||||||||||||||||*/
+/*||||||||   RESOLUÇÃO ABAIXO DE 750px   ||||||||*/
+/*|||||||||||||||||||||||||||||||||||||||||||||||*/
+@media (min-width: 0px) and (max-width: 750px){
+	main{
+		//========
+		//==HOME==
+		//========
+		div.home{
+			background-size: auto 100%;
+			div.container div.text h1.name{
+				line-height: 65px;
+			}//End Home Name
+
+		}//End Home
+
+	}//End main
+
+}//End 750px
+
+/*|||||||||||||||||||||||||||||||||||||||||||||||*/
+/*||||||||   RESOLUÇÃO ABAIXO DE 630px   ||||||||*/
+/*|||||||||||||||||||||||||||||||||||||||||||||||*/
+@media (min-width: 0px) and (max-width: 630px){
+	//=============
+	//==FORMATION==
+	//=============
+	div.bgFormation{
+		background-size: auto 100% !important;
+	}//End Formation
+
+	//==================
+	//==QUALIFICATIONS==
+	//==================
+	div.bgQualifications{
+		background-size: auto 100% !important;
+	}//End qualification
+
+	//===========
+	//==CONTACT==
+	//===========
+	div.bgContact{
+		background-size: auto 100% !important;
+	}//End contact
+
+}//End 630px
+
+/*|||||||||||||||||||||||||||||||||||||||||||||||*/
+/*||||||||   RESOLUÇÃO ABAIXO DE 550px   ||||||||*/
+/*|||||||||||||||||||||||||||||||||||||||||||||||*/
+@media (min-width: 0px) and (max-width: 550px){
+	main{
+		//==============
+		//==EXPERIENCE==
+		//==============
+		ul.experiences li{
+			margin: 160px auto 0 auto;
+			height: auto !important;
+			&.clear{
+				margin-top: 0px;
+			}
+
+			div.img{
+				left: 50% !important;
+				margin-right: 50%;
+				top: -125px;
+				transform: translate(-50%);
+				height: 250px;
+				width: 250px;
+			}//End Experience image
+
+			div.text{
+				padding: 130px 10px 10px 10px !important;
+				text-align: center !important;
+				width: 250px;
+				float: none !important;
+				margin: 0 auto;
+				height: auto;
+				h3 img{
+					display: block !important;
+					margin: 5px auto 2px auto !important;
+				}//End Icon
+
+			}//End Experience text
+
+		}//End Experience
+
+	}//End main
+
+}//End 550px
+
+/*|||||||||||||||||||||||||||||||||||||||||||||||*/
+/*||||||||   RESOLUÇÃO ABAIXO DE 470px   ||||||||*/
+/*|||||||||||||||||||||||||||||||||||||||||||||||*/
+@media (min-width: 0px) and (max-width: 470px){
+	main{
+		//========
+		//==HOME==
+		//========
+		div.home{
+			div.container{
+				div.text ul.features li{
+					&:nth-child(8n+1){
+						display: none;
+					}//End Home Feature 5° Item
+
+				}//End Home Feature Item
+				button.scrollPage{
+					display: none;
+				}//End Scroll Page Button
+
+			}//End Container
+
+		}//End Home
+
+	}//End main
+
+}//End 470px
+
+/*|||||||||||||||||||||||||||||||||||||||||||||||*/
+/*||||||||   RESOLUÇÃO ABAIXO DE 400px   ||||||||*/
+/*|||||||||||||||||||||||||||||||||||||||||||||||*/
+@media (min-width: 0px) and (max-width: 400px){
+	main{
+		//========
+		//==HOME==
+		//========
+		div.home{
+			div.container div.text ul.features li{
+				&:nth-child(6n+2){
+					display: none;
+				}//End Home Feature 4° Item
+				
+			}//End Home Feature Item
+
+		}//End Home
+
+	}//End main
+
+}//End 400px
+
+/*|||||||||||||||||||||||||||||||||||||||||||||||*/
+/*||||||||   RESOLUÇÃO ABAIXO DE 340px   ||||||||*/
+/*|||||||||||||||||||||||||||||||||||||||||||||||*/
+@media (min-width: 0px) and (max-width: 340px){
+	main{
+		//========
+		//==HOME==
+		//========
+		div.home{
+			div.container div.text ul.features li{
+				&:nth-child(4n+3){
+					display: none;
+				}//End Home Feature 3° Item
+				
+			}//End Home Feature Item
+
+		}//End Home
+
+	}//End main
+
+}//End 340px
