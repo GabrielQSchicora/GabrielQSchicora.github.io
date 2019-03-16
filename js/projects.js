@@ -2,11 +2,17 @@ $(document).ready(function(){
 	var data = new Array();
 	var tempArray = new Array();
 
-	/*tempArray.push('img/projects/folador.jpg');
-	tempArray.push('https://www.nelsonfolador.com.br');
-	tempArray.push('Contabilidade Folador');
+	tempArray.push('img/projects/cd6.jpg');
+	tempArray.push('https://www.cd6.com.br');
+	tempArray.push('CD6 - Centro de Desenvolvimento');
 	data.push(tempArray);
-	tempArray = new Array();*/
+	tempArray = new Array();
+
+	tempArray.push('img/projects/forca-vital.jpg');
+	tempArray.push('https://www.forcavital.net');
+	tempArray.push('Força Vital');
+	data.push(tempArray);
+	tempArray = new Array();
 
 	tempArray.push('img/projects/madepinus.jpg');
 	tempArray.push('https://www.casamadepinus.com.br');

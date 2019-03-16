@@ -22,7 +22,7 @@ $(document).ready(function(){
 	tempArray.push('Estágio - Desenvolvedor Front End');
 	tempArray.push(new Date('2018/03/01'));
 	tempArray.push(new Date('2018/06/01'));
-	tempArray.push('Légulas Soluções para WEB.');
+	tempArray.push('Légulas Soluções para WEB');
 	data.push(tempArray);
 	tempArray = new Array();
 
@@ -30,7 +30,15 @@ $(document).ready(function(){
 	tempArray.push('Desenvolvedor Front End');
 	tempArray.push(new Date('2018/06/01'));
 	tempArray.push(new Date());
-	tempArray.push('Légulas Soluções para WEB.');
+	tempArray.push('Légulas Soluções para WEB');
+	data.push(tempArray);
+	tempArray = new Array();
+
+	tempArray.push('img/experiences/incratec.jpg');
+	tempArray.push('Desenvolvedor PHP');
+	tempArray.push(new Date('2019/03/12'));
+	tempArray.push(new Date());
+	tempArray.push('INCRATEC');
 	data.push(tempArray);
 	tempArray = new Array();
 
