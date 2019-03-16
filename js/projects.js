@@ -4,7 +4,7 @@ $(document).ready(function(){
 
 	tempArray.push('img/projects/cd6.jpg');
 	tempArray.push('https://www.cd6.com.br');
-	tempArray.push('CD6 - Centro de Desenvolvimento');
+	tempArray.push('CD6');
 	data.push(tempArray);
 	tempArray = new Array();
 
