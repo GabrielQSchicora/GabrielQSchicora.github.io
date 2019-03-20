@@ -61,47 +61,13 @@ RewriteEngine On
 #
 # Redirect HTTP to HTTPS
 #
-#RewriteCond %{HTTP:X-Forwarded-Proto} !https
-#RewriteCond %{HTTPS} off
-#RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 #
 # Redirect URL without www to URL with www
 #
-#RewriteCond %{HTTP_HOST} !^www\.
-#RewriteCond %{HTTPS}s on(s)|offs()
-#RewriteRule ^ http%1://www.%{HTTP_HOST}%{REQUEST_URI} [NE,L,R=301]
-
-RewriteCond %{SCRIPT_FILENAME} !-f
-RewriteCond %{SCRIPT_FILENAME} !-d
-
-#
-# Errors Documents
-#
-ErrorDocument 400 /errors/errors_router.php?code=400
-ErrorDocument 401 /errors/errors_router.php?code=401
-ErrorDocument 402 /errors/errors_router.php?code=402
-ErrorDocument 403 /errors/errors_router.php?code=403
-ErrorDocument 404 /errors/errors_router.php?code=404
-ErrorDocument 405 /errors/errors_router.php?code=405
-ErrorDocument 406 /errors/errors_router.php?code=406
-ErrorDocument 407 /errors/errors_router.php?code=407
-ErrorDocument 408 /errors/errors_router.php?code=408
-ErrorDocument 409 /errors/errors_router.php?code=409
-ErrorDocument 410 /errors/errors_router.php?code=410
-ErrorDocument 411 /errors/errors_router.php?code=411
-ErrorDocument 412 /errors/errors_router.php?code=412
-ErrorDocument 413 /errors/errors_router.php?code=413
-ErrorDocument 414 /errors/errors_router.php?code=414
-ErrorDocument 415 /errors/errors_router.php?code=415
-ErrorDocument 416 /errors/errors_router.php?code=416
-ErrorDocument 417 /errors/errors_router.php?code=417
-ErrorDocument 422 /errors/errors_router.php?code=422
-ErrorDocument 423 /errors/errors_router.php?code=423
-ErrorDocument 424 /errors/errors_router.php?code=424
-ErrorDocument 500 /errors/errors_router.php?code=500
-ErrorDocument 501 /errors/errors_router.php?code=501
-ErrorDocument 502 /errors/errors_router.php?code=502
-ErrorDocument 503 /errors/errors_router.php?code=503
-ErrorDocument 504 /errors/errors_router.php?code=504
-ErrorDocument 505 /errors/errors_router.php?code=505
+RewriteCond %{HTTP_HOST} !^www\.
+RewriteCond %{HTTPS}s on(s)|offs()
+RewriteRule ^ http%1://www.%{HTTP_HOST}%{REQUEST_URI} [NE,L,R=301]
