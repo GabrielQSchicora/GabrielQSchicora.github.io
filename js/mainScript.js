@@ -207,6 +207,7 @@ $(window).scroll(function(){
       if(windowScroll > ($(this).offset().top - (screenHeight * 0.25))){
         $('nav.menu ul li').removeClass('active');
         $('nav.menu ul li'+$(this).data('target')).addClass('active');
+        window.history.pushState("object or string", "Title", "/"+$('nav.menu ul li'+$(this).data('target')).data('url'));
       }
     });
   }
