@@ -71,14 +71,3 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteCond %{HTTP_HOST} !^www\.
 RewriteCond %{HTTPS}s on(s)|offs()
 RewriteRule ^ http%1://www.%{HTTP_HOST}%{REQUEST_URI} [NE,L,R=301]
-
-#
-# SEO Friendly URL
-#
-RewriteRule ^home/?$ index.html [NC,L]
-RewriteRule ^quem-sou-eu/?$ index.html [NC,L]
-RewriteRule ^formacao/?$ index.html [NC,L]
-RewriteRule ^experiencia/?$ index.html [NC,L]
-RewriteRule ^qualificacoes/?$ index.html [NC,L]
-RewriteRule ^projetos/?$ index.html [NC,L]
-RewriteRule ^fale-comigo/?$ index.html [NC,L]
