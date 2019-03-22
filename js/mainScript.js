@@ -91,6 +91,7 @@ $(document).ready(function(){
     $('header div.menuComand').trigger('click');
     $(this).siblings().removeClass('active');
     $(this).addClass('active');
+    window.history.pushState("object or string", "Title", "/"$(this).data('url'));
   });
 
   /*
