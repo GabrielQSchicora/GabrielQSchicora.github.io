@@ -8,9 +8,9 @@ $(document).ready(function(){
 	data.push(tempArray);
 	tempArray = new Array();
 
-	tempArray.push('img/projects/forca-vital.jpg');
-	tempArray.push('https://www.forcavital.net');
-	tempArray.push('Força Vital');
+	tempArray.push('img/projects/dentvida.jpg');
+	tempArray.push('https://www.dentvida.com.br');
+	tempArray.push('Dentvida');
 	data.push(tempArray);
 	tempArray = new Array();
 
@@ -20,9 +20,15 @@ $(document).ready(function(){
 	data.push(tempArray);
 	tempArray = new Array();
 
-	tempArray.push('img/projects/dentvida.jpg');
-	tempArray.push('https://www.dentvida.com.br');
-	tempArray.push('Dentvida');
+	tempArray.push('img/projects/forca-vital.jpg');
+	tempArray.push('https://www.forcavital.net');
+	tempArray.push('Força Vital');
+	data.push(tempArray);
+	tempArray = new Array();
+
+	tempArray.push('img/projects/giorgio-baretta.jpg');
+	tempArray.push('https://www.giorgiobaretta.com.br');
+	tempArray.push('Dr. Giorgio Baretta');
 	data.push(tempArray);
 	tempArray = new Array();
 
@@ -31,6 +37,8 @@ $(document).ready(function(){
 	tempArray.push('Persianas & Persianas');
 	data.push(tempArray);
 	tempArray = new Array();
+
+	data.reverse();
 
 	data.forEach(function(item){
 		var html = '<li style="background-image: url('+item[0]+');">'

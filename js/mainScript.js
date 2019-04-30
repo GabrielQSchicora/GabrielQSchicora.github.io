@@ -268,11 +268,11 @@ function getDateDiff(initialDate, finalDate, type = "days"){
     }else if(type == 'years'){
       division = 1000 * 60 * 60 * 24 * 30.5833333 * 12;
     }else{
-            //Throw type invalid Exception
-          throw "Return date type "+type+" is invalid. Use miliseconds, seconds, minutes, hours, days, months, years or text.";
+      //Throw type invalid Exception
+      throw "Return date type "+type+" is invalid. Use miliseconds, seconds, minutes, hours, days, months, years or text.";
     }
   }catch(e){
-        //Show errors on Log
+    //Show errors on Log
     console.error(e);
     return false;
   }
@@ -324,4 +324,9 @@ function getDateDiff(initialDate, finalDate, type = "days"){
 function getDateFormatedToShow(date){
   month = (date.getMonth()+1 < 10)?'0'+(date.getMonth()+1):date.getMonth()+1;
   return  month + "/" + date.getFullYear();
+}
+
+function getFullDateFormatToShow(date){
+  month = (date.getMonth()+1 < 10)?'0'+(date.getMonth()+1):date.getMonth()+1;
+  return  date.getDay() + "/" + month + "/" + date.getFullYear();
 }

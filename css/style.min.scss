@@ -535,109 +535,107 @@ main{
 	//==============
 	//==EXPERIENCE==
 	//==============
-	ul.experiences li{
-		position: relative;
-		clear: both;
-		margin: 5px 0;
-		height: 220px;
-		opacity: 0;
-		transition-property: opacity;
-		transition-duration: 0.5s;
+	ul.experiences{
+		padding-bottom: 50px;
 
-		&.show{
-			opacity: 1;
-		}//End Item Show
-
-		&.clear{
-			height: 1px;
-		}//End debug item
-
-		&:nth-child(odd){
-			div.img{
-				left: 0;
-			}//End Item Image
-
-			div.text{
-				float: right;
-				padding-left: 170px;
-				background-color: $green;
-			}//End Item Text
-
-		}//End odd item 
-
-		&:nth-child(even){
-			div.img{
-				right: 0;
-			}//End Item Image
-
-			div.text{
-				float: left;
-				padding-right: 170px;
-				text-align: right;
-			}//End Item Text
-
-		}//End even item
-
-		div.img{
-			background-position: center center;
-			background-repeat: no-repeat;
-			background-size: 100%;
-			@include circle;
-			border: 5px solid $darkGreen;
-			background-color: $white;
-			width: 220px;
+		li{
+			position: relative;
+			clear: both;
+			margin: 5px 0;
 			height: 220px;
-			position: absolute;
-		}//End experience Image
+			opacity: 0;
+			transition-property: opacity;
+			transition-duration: 0.5s;
 
-		div.text{
-			border: 5px solid $green;
-			width: 90%;
-			height: 170px;
-			margin-top: 25px;
-			padding: 20px 0;
-			border-radius: 10px;
+			&.show{
+				opacity: 1;
+			}//End Item Show
 
-			h2.function{
-				font-family: $secondaryFont;
-				font-size: 16px;
-			}//End h2 with class function
+			&.clear{
+				height: 1px;
+			}//End debug item
 
-			h3.dates{
-				margin: 10px 0;
+			&:nth-child(odd){
+				div.img{
+					left: 0;
+				}//End Item Image
 
-				img{
-					display: inline-block;
-					vertical-align: text-top;
-					margin-right: 10px;
-				}//End Date icon
+				div.text{
+					float: right;
+					padding-left: 170px;
+					background-color: $green;
+				}//End Item Text
+			}//End odd item 
 
-				span{
-					font-size: 13px;
-					display: inline-block;
-					vertical-align: baseline;	
-				}//End Date Text
+			&:nth-child(even){
+				div.img{
+					right: 0;
+				}//End Item Image
 
-			}//End h3 dates
+				div.text{
+					float: left;
+					padding-right: 170px;
+					text-align: right;
+				}//End Item Text
+			}//End even item
 
-			h3.company{
-				img{
-					display: inline-block;
-					vertical-align: text-top;
-					margin-right: 10px;
-				}//End company icon
+			div.img{
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-size: 100%;
+				@include circle;
+				border: 5px solid $darkGreen;
+				background-color: $white;
+				width: 220px;
+				height: 220px;
+				position: absolute;
+			}//End experience Image
 
-				span{
-					font-size: 13px;
-					display: inline-block;
-					vertical-align: baseline;	
-				}//End company Text
+			div.text{
+				border: 5px solid $green;
+				width: 90%;
+				height: 170px;
+				margin-top: 25px;
+				padding: 20px 0;
+				border-radius: 10px;
 
-			}//End h3 company
+				h2.function{
+					font-family: $secondaryFont;
+					font-size: 16px;
+				}//End h2 with class function
 
-		}//End experience text
+				h3.dates{
+					margin: 10px 0;
 
-	}//End experience item
+					img{
+						display: inline-block;
+						vertical-align: text-top;
+						margin-right: 10px;
+					}//End Date icon
+
+					span{
+						font-size: 13px;
+						display: inline-block;
+						vertical-align: baseline;	
+					}//End Date Text
+				}//End h3 dates
+
+				h3.company{
+					img{
+						display: inline-block;
+						vertical-align: text-top;
+						margin-right: 10px;
+					}//End company icon
+
+					span{
+						font-size: 13px;
+						display: inline-block;
+						vertical-align: baseline;	
+					}//End company Text
+				}//End h3 company
+			}//End experience text
+		}//End experience item
+	}//End Experience List
 
 	//==================
 	//==QUALIFICATIONS==

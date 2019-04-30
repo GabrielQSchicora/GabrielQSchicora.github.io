@@ -2,6 +2,13 @@ $(document).ready(function(){
 	var data = new Array();
 	var tempArray = new Array();
 
+	tempArray.push('Tecnólogo em Análise e Desenvolvimento de Sistemas');
+	tempArray.push(new Date('2016/02/01'));
+	tempArray.push(new Date('2019/11/01'));
+	tempArray.push('Centro Técnologico positivo');
+	data.push(tempArray);
+	tempArray = new Array();
+
 	tempArray.push('Curso Tecnico em Sistemas para internet');
 	tempArray.push(new Date('2014/01/01'));
 	tempArray.push(new Date('2015/06/01'));
@@ -9,12 +16,7 @@ $(document).ready(function(){
 	data.push(tempArray);
 	tempArray = new Array();
 
-	tempArray.push('Tecnólogo em Análise e Desenvolvimento de Sistemas');
-	tempArray.push(new Date('2016/02/01'));
-	tempArray.push(new Date('2019/11/01'));
-	tempArray.push('Centro Técnologico positivo');
-	data.push(tempArray);
-	tempArray = new Array();
+	data.reverse();
 
 	var cont = 0.5 * data.length;
 
