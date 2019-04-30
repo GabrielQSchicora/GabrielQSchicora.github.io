@@ -29,7 +29,7 @@ $(document).ready(function(){
 	tempArray.push('img/experiences/legulas-solucoes-web.jpg');
 	tempArray.push('Desenvolvedor Front End');
 	tempArray.push(new Date('2018/06/01'));
-	tempArray.push(new Date());
+	tempArray.push(new Date('2019/03/13'));
 	tempArray.push('Légulas Soluções para WEB');
 	data.push(tempArray);
 	tempArray = new Array();
