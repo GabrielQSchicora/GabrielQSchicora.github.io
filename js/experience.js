@@ -3,7 +3,7 @@ $(document).ready(function(){
 	var tempArray = new Array();
 
 	tempArray.push('img/experiences/incratec.jpg');
-	tempArray.push('Desenvolvedor PHP');
+	tempArray.push('Desenvolvedor Full Stack');
 	tempArray.push(new Date('2019/03/12'));
 	tempArray.push(new Date());
 	tempArray.push('INCRATEC');

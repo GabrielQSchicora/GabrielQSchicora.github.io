@@ -20,11 +20,11 @@ $(document).ready(function(){
 	data.push(tempArray);
 	tempArray = new Array();
 
-	tempArray.push('img/qualifications/python.jpg');
+/*	tempArray.push('img/qualifications/python.jpg');
 	tempArray.push('#ffd53d');
 	tempArray.push('35%');
 	data.push(tempArray);
-	tempArray = new Array();
+	tempArray = new Array();*/
 
 	tempArray.push('img/qualifications/sql.jpg');
 	tempArray.push('#0079d6');
@@ -34,7 +34,7 @@ $(document).ready(function(){
 
 	tempArray.push('img/qualifications/js.jpg');
 	tempArray.push('#e9ca32');
-	tempArray.push('40%');
+	tempArray.push('50%');
 	data.push(tempArray);
 	tempArray = new Array();
 
@@ -47,12 +47,6 @@ $(document).ready(function(){
 	tempArray.push('img/qualifications/ajax.jpg');
 	tempArray.push('#378fca');
 	tempArray.push('65%');
-	data.push(tempArray);
-	tempArray = new Array();
-
-	tempArray.push('img/qualifications/android.jpg');
-	tempArray.push('#94c248');
-	tempArray.push('20%');
 	data.push(tempArray);
 	tempArray = new Array();
 

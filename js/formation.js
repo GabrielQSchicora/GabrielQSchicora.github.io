@@ -4,7 +4,7 @@ $(document).ready(function(){
 
 	tempArray.push('Tecnólogo em Análise e Desenvolvimento de Sistemas');
 	tempArray.push(new Date('2016/02/01'));
-	tempArray.push(new Date('2019/11/01'));
+	tempArray.push(new Date('2020/06/30'));
 	tempArray.push('Centro Técnologico positivo');
 	data.push(tempArray);
 	tempArray = new Array();
